@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Thin 100 -->
+    <font
+        android:font="@font/intertight_thin"
+        android:fontWeight="100"
+        android:fontStyle="normal"/>
+
+    <!-- ExtraLight 200 -->
+    <font
+        android:font="@font/intertight_extralight"
+        android:fontWeight="200"
+        android:fontStyle="normal"/>
+
+    <!-- Light 300 -->
+    <font
+        android:font="@font/intertight_light"
+        android:fontWeight="300"
+        android:fontStyle="normal"/>
+
+    <!-- Regular 400 -->
+    <font
+        android:font="@font/intertight_regular"
+        android:fontWeight="400"
+        android:fontStyle="normal"/>
+
+    <!-- Medium 500 -->
+    <font
+        android:font="@font/intertight_medium"
+        android:fontWeight="500"
+        android:fontStyle="normal"/>
+
+    <!-- SemiBold 600 -->
+    <font
+        android:font="@font/intertight_semibold"
+        android:fontWeight="600"
+        android:fontStyle="normal"/>
+
+    <!-- Bold 700 -->
+    <font
+        android:font="@font/intertight_bold"
+        android:fontWeight="700"
+        android:fontStyle="normal"/>
+
+    <!-- ExtraBold 800 -->
+    <font
+        android:font="@font/intertight_extrabold"
+        android:fontWeight="800"
+        android:fontStyle="normal"/>
+
+    <!-- Black 900 -->
+    <font
+        android:font="@font/intertight_black"
+        android:fontWeight="900"
+        android:fontStyle="normal"/>
+
+</font-family>
