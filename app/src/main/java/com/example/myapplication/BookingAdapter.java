@@ -1,4 +1,4 @@
-// for displaying bookingss
+// BookingAdapter.java – for displaying bookings and opening EditBookingActivity
 package com.example.myapplication;
 
 import android.content.Context;
@@ -52,15 +52,20 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.ViewHold
         holder.tvDate.setText(booking.getDate());
         holder.ivImage.setImageResource(booking.getImageResId());
 
-        // -> edit booking
         holder.itemView.setOnClickListener(v -> {
+            int index = holder.getAdapterPosition();
+            if (index == RecyclerView.NO_POSITION) return;
+
             Intent intent = new Intent(context, EditBookingActivity.class);
+            intent.putExtra("index", index);
+
             intent.putExtra("hotelName", booking.getHotelName());
             intent.putExtra("date", booking.getDate());
             intent.putExtra("breakfast", booking.hasBreakfast());
             intent.putExtra("roomType", booking.getRoomType());
             intent.putExtra("airportPickup", booking.isAirportPickup());
             intent.putExtra("imageResId", booking.getImageResId());
+
             context.startActivity(intent);
         });
     }

@@ -30,13 +30,31 @@ public class BookingsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         bookingList = new ArrayList<>();
+
         loadBookingsFromPrefs();
 
         adapter = new BookingAdapter(this, bookingList);
         recyclerView.setAdapter(adapter);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Reload data when returning from EditBookingActivity
+        loadBookingsFromPrefs();
+        if (adapter != null) {
+            adapter.notifyDataSetChanged();
+        }
+    }
+
     private void loadBookingsFromPrefs() {
+        // Always start fresh to avoid duplicates
+        if (bookingList == null) {
+            bookingList = new ArrayList<>();
+        } else {
+            bookingList.clear();
+        }
+
         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String json = prefs.getString("bookings", "[]");
 

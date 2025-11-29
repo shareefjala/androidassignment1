@@ -4,10 +4,10 @@ package com.example.myapplication;
 import android.app.DatePickerDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
@@ -30,6 +30,8 @@ public class DetailsActivity extends AppCompatActivity {
     private RadioGroup rgRoomType;
     private Switch switchAirport;
     private Button btnBook;
+    private ImageView imageHotel;
+
     private int year, month, day;
     private SharedPreferences prefs;
 
@@ -39,38 +41,39 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
 
         // Initialize views
-        tvName = findViewById(R.id.textHotelName);
-        tvLocation = findViewById(R.id.textHotelLocation);
-        tvPrice = findViewById(R.id.textHotelPrice);
-        tvRating = findViewById(R.id.textHotelRating);
-        tvDescription = findViewById(R.id.textHotelDesc);
-        tvDate = findViewById(R.id.textCheckinDate);
-        cbBreakfast = findViewById(R.id.checkBoxBreakfast);
-        rgRoomType = findViewById(R.id.radioGroupRoomType);
-        switchAirport = findViewById(R.id.switchAirport);
-        btnBook = findViewById(R.id.buttonBook);
+        imageHotel   = findViewById(R.id.imageHotel);
+        tvName       = findViewById(R.id.textHotelName);
+        tvLocation   = findViewById(R.id.textHotelLocation);
+        tvPrice      = findViewById(R.id.textHotelPrice);
+        tvRating     = findViewById(R.id.textHotelRating);
+        tvDescription= findViewById(R.id.textHotelDesc);
+        tvDate       = findViewById(R.id.textCheckinDate);
+        cbBreakfast  = findViewById(R.id.checkBoxBreakfast);
+        rgRoomType   = findViewById(R.id.radioGroupRoomType);
+        switchAirport= findViewById(R.id.switchAirport);
+        btnBook      = findViewById(R.id.buttonBook);
 
-        // hotel info from intent
-        String name = getIntent().getStringExtra("name");
-        String location = getIntent().getStringExtra("location");
-        double price = getIntent().getDoubleExtra("price", 0);
-        float rating = getIntent().getFloatExtra("rating", 0f);
+        // Hotel info from intent
+        String name        = getIntent().getStringExtra("name");
+        String location    = getIntent().getStringExtra("location");
+        double price       = getIntent().getDoubleExtra("price", 0);
+        float rating       = getIntent().getFloatExtra("rating", 0f);
         String description = getIntent().getStringExtra("description");
-        // image from intent, if no image default is image1
-        int imageResId = getIntent().getIntExtra("imageResId", R.drawable.image1);
+        int imageResId     = getIntent().getIntExtra("imageResId", R.drawable.image1);
 
         tvName.setText(name);
         tvLocation.setText(location);
         tvPrice.setText("$" + price);
         tvRating.setText(rating + " ★");
         tvDescription.setText(description);
+        imageHotel.setImageResource(imageResId);
 
-        // date picker (needed from project instructions)
+        // Date picker
         tvDate.setOnClickListener(view -> {
             final Calendar c = Calendar.getInstance();
-            year = c.get(Calendar.YEAR);
+            year  = c.get(Calendar.YEAR);
             month = c.get(Calendar.MONTH);
-            day = c.get(Calendar.DAY_OF_MONTH);
+            day   = c.get(Calendar.DAY_OF_MONTH);
 
             DatePickerDialog dpd = new DatePickerDialog(
                     DetailsActivity.this,
@@ -96,7 +99,7 @@ public class DetailsActivity extends AppCompatActivity {
             }
 
             boolean breakfast = cbBreakfast.isChecked();
-            int selectedId = rgRoomType.getCheckedRadioButtonId();
+            int selectedId    = rgRoomType.getCheckedRadioButtonId();
             if (selectedId == -1) {
                 Toast.makeText(DetailsActivity.this, "Please select room type", Toast.LENGTH_SHORT).show();
                 return;
