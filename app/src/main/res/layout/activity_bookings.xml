@@ -1,4 +1,3 @@
-<!-- activity_bookings.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:background="@color/black"

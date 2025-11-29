@@ -10,7 +10,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Hotel image -->
         <ImageView
             android:id="@+id/ivEditHotelImage"
             android:layout_width="match_parent"
@@ -29,7 +28,6 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <!-- Date -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -69,7 +67,6 @@
             android:textColor="@android:color/white"
             android:textColorHint="#80FFFFFF" />
 
-        <!-- Options -->
         <CheckBox
             android:id="@+id/cbEditBreakfast"
             android:layout_width="wrap_content"

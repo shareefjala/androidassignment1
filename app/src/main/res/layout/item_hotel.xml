@@ -17,7 +17,6 @@
         android:orientation="vertical"
         android:background="#1f1f1f">
 
-        <!-- Hotel image -->
         <ImageView
             android:id="@+id/hotelImage"
             android:layout_width="match_parent"
@@ -25,14 +24,12 @@
             android:scaleType="centerCrop"
             android:src="@drawable/ic_launcher_background" />
 
-        <!-- Bottom info area -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="12dp">
 
-            <!-- Location line (House • Italy) -->
             <TextView
                 android:id="@+id/hotelLocation"
                 android:layout_width="wrap_content"
@@ -41,7 +38,6 @@
                 android:textColor="@color/lightGray"
                 android:textSize="12sp" />
 
-            <!-- Name -->
             <TextView
                 android:id="@+id/hotelName"
                 android:layout_width="wrap_content"
