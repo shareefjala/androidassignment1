@@ -1,0 +1,128 @@
+<!-- activity_details.xml -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/black"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textHotelName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hotel Name"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textHotelLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textColor="@color/lightGray" />
+
+        <TextView
+            android:id="@+id/textHotelPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$0.00"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/textHotelRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0 ★"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/textHotelDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textColor="@color/lightGray"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Booking Form -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Check-in Date:"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/textCheckinDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="YYYY-MM-DD"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:background="@drawable/edittext_bg"
+            android:focusable="false"
+            android:clickable="true"
+            android:layout_marginBottom="16dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxBreakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Breakfast Included"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Room Type:"
+            android:textColor="@color/white"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroupRoomType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+            <RadioButton
+                android:id="@+id/radioSingle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Single"
+                android:textColor="@color/white"/>
+            <RadioButton
+                android:id="@+id/radioDouble"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Double"
+                android:textColor="@color/white"
+                android:layout_marginStart="16dp"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Airport Pickup:"
+            android:textColor="@color/white"/>
+        <Switch
+            android:id="@+id/switchAirport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes / No"
+            android:textColor="@color/white"
+            android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/buttonBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book Now"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+</ScrollView>

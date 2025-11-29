@@ -1,0 +1,57 @@
+<!-- activity_search.xml -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/black"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editTextSearchName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hotel name contains..."
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:inputType="text"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/editTextMinPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Minimum price"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/editTextMinRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Minimum rating (0-5)"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/buttonDoSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>

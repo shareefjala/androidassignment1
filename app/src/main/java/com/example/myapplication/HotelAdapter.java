@@ -1,65 +1,71 @@
+// HotelAdapter.java (RecyclerView Adapter)
 package com.example.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
-import android.view.*;
-import android.widget.*;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.RatingBar;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
-public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.Holder> {
+public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> {
+    private List<Hotel> hotelList;
+    private Context context;
 
-    Context c;
-    List<Hotel> data;
+    public HotelAdapter(Context context, List<Hotel> hotels) {
+        this.context = context;
+        this.hotelList = hotels;
+    }
 
-    public HotelAdapter(Context c, List<Hotel> data){
-        this.c = c;
-        this.data = data;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView tvName, tvLocation, tvPrice;
+        public RatingBar ratingBar;
+        public ViewHolder(View itemView) {
+            super(itemView);
+            tvName = itemView.findViewById(R.id.hotelName);
+            tvLocation = itemView.findViewById(R.id.hotelLocation);
+            tvPrice = itemView.findViewById(R.id.hotelPrice);
+            ratingBar = itemView.findViewById(R.id.hotelRating);
+        }
     }
 
     @NonNull
     @Override
-    public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(c).inflate(R.layout.item_hotel, parent, false);
-        return new Holder(v);
+    public HotelAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // Inflate item layout
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_hotel, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Holder h, int pos) {
-        Hotel hotel = data.get(pos);
-
-        h.name.setText(hotel.name);
-        h.location.setText(hotel.location);
-        h.price.setText("$" + hotel.price);
-        h.rating.setRating(hotel.rating);
-
-        h.itemView.setOnClickListener(v -> {
-            Intent i = new Intent(c, DetailsActivity.class);
-            i.putExtra("name", hotel.name);
-            i.putExtra("location", hotel.location);
-            i.putExtra("price", hotel.price);
-            i.putExtra("rating", hotel.rating);
-            i.putExtra("desc", hotel.desc);
-            c.startActivity(i);
+    public void onBindViewHolder(@NonNull HotelAdapter.ViewHolder holder, int position) {
+        final Hotel hotel = hotelList.get(position);
+        holder.tvName.setText(hotel.getName());
+        holder.tvLocation.setText(hotel.getLocation());
+        holder.tvPrice.setText("$" + hotel.getPrice() + " / night");
+        holder.ratingBar.setRating(hotel.getRating());
+        // Item click opens details screen
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)  {
+                Intent intent = new Intent(context, DetailsActivity.class);
+                intent.putExtra("name", hotel.getName());
+                intent.putExtra("location", hotel.getLocation());
+                intent.putExtra("price", hotel.getPrice());
+                intent.putExtra("rating", hotel.getRating());
+                intent.putExtra("description", hotel.getDescription());
+                context.startActivity(intent);
+            }
         });
     }
 
     @Override
     public int getItemCount() {
-        return data.size();
-    }
-
-    class Holder extends RecyclerView.ViewHolder {
-        TextView name, location, price;
-        RatingBar rating;
-
-        Holder(View v){
-            super(v);
-            name = v.findViewById(R.id.hotelName);
-            location = v.findViewById(R.id.hotelLocation);
-            price = v.findViewById(R.id.hotelPrice);
-            rating = v.findViewById(R.id.hotelRating);
-        }
+        return hotelList.size();
     }
 }
