@@ -46,8 +46,11 @@ public class LoginActivity extends AppCompatActivity {
 
                     Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT).show();
 
-                    // SAVE LOGIN STATUS
-                    prefs.edit().putBoolean("isLoggedIn", true).apply();
+                    // SAVE LOGIN STATUS + USERNAME
+                    prefs.edit()
+                            .putBoolean("isLoggedIn", true)
+                            .putString("username", user)
+                            .apply();
 
                     // redirect
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));

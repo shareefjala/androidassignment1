@@ -1,24 +1,41 @@
-<!-- item_booking.xml -->
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="12dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/darkGray">
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:background="#111111">
 
-    <TextView
-        android:id="@+id/textBookingHotel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hotel Name"
-        android:textColor="@color/white"
-        android:textSize="16sp" />
+    <ImageView
+        android:id="@+id/bookingImage"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/image1" />
 
-    <TextView
-        android:id="@+id/textBookingDate"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="2025-01-01"
-        android:textColor="@color/lightGray"
-        android:layout_marginTop="4dp"/>
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textBookingHotel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hotel Name"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textBookingDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2025-01-01"
+            android:textColor="#B3FFFFFF"
+            android:textSize="13sp" />
+    </LinearLayout>
+
 </LinearLayout>

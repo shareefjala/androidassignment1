@@ -1,4 +1,3 @@
-// File: MainActivity.java
 package com.example.myapplication;
 
 import android.os.Bundle;
@@ -8,6 +7,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);  // Use the layout with a welcome text
+        setContentView(R.layout.activity_main);
     }
 }

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Hotel image -->
+        <ImageView
+            android:id="@+id/ivEditHotelImage"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image1" />
+
+        <!-- Hotel name -->
+        <TextView
+            android:id="@+id/tvEditHotelName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Hotel Name"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Date -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Date"
+            android:textColor="#B3FFFFFF"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/etEditDate"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="#252525"
+            android:hint="YYYY-MM-DD"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#80FFFFFF" />
+
+        <!-- Room type -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Room type"
+            android:textColor="#B3FFFFFF"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/etEditRoomType"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="#252525"
+            android:hint="e.g. Deluxe Room"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#80FFFFFF" />
+
+        <!-- Options -->
+        <CheckBox
+            android:id="@+id/cbEditBreakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Include breakfast"
+            android:textColor="@android:color/white" />
+
+        <CheckBox
+            android:id="@+id/cbEditAirportPickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Airport pickup"
+            android:textColor="@android:color/white" />
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="24dp">
+
+            <Button
+                android:id="@+id/btnCancelEdit"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:background="#333333" />
+
+            <View
+                android:layout_width="12dp"
+                android:layout_height="0dp" />
+
+            <Button
+                android:id="@+id/btnSaveBooking"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="Save"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:background="#19FF5B" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

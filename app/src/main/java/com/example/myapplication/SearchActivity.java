@@ -1,4 +1,3 @@
-// SearchActivity.java
 package com.example.myapplication;
 
 import android.os.Bundle;
@@ -30,14 +29,18 @@ public class SearchActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerViewSearch);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Sample hotel data (same as Home)
+        // sample hotel data (same as Home)
         allHotels = new ArrayList<>();
-        allHotels.add(new Hotel("Oceanview Resort", "Miami, FL", 180.0, 4.5f, "Beachfront resort with ocean view."));
-        allHotels.add(new Hotel("Mountain Lodge", "Aspen, CO", 220.0, 4.7f, "Cozy lodge in the mountains."));
-        allHotels.add(new Hotel("City Center Inn", "New York, NY", 150.0, 4.0f, "Hotel in the heart of the city."));
-        allHotels.add(new Hotel("Desert Oasis", "Phoenix, AZ", 130.0, 3.8f, "Relaxing oasis with desert views."));
-        allHotels.add(new Hotel("Lakeside Hotel", "Chicago, IL", 200.0, 4.2f, "Comfortable stay by the lake."));
-
+        allHotels.add(new Hotel("Oceanview Resort", "Miami, FL", 180.0, 4.5f, "Beachfront resort with ocean view.",
+                R.drawable.image1));
+        allHotels.add(new Hotel("Mountain Lodge", "Aspen, CO", 220.0, 4.7f, "Cozy lodge in the mountains.",
+                R.drawable.image1));
+        allHotels.add(new Hotel("City Center Inn", "New York, NY", 150.0, 4.0f, "Hotel in the heart of the city.",
+                R.drawable.image1));
+        allHotels.add(new Hotel("Desert Oasis", "Phoenix, AZ", 130.0, 3.8f, "Relaxing oasis with desert views.",
+                R.drawable.image1));
+        allHotels.add(new Hotel("Lakeside Hotel", "Chicago, IL", 200.0, 4.2f, "Comfortable stay by the lake.",
+                R.drawable.image1));
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

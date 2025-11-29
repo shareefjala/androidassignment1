@@ -29,6 +29,7 @@
         <activity android:name=".DetailsActivity" android:exported="false"/>
         <activity android:name=".BookingsActivity" android:exported="false"/>
         <activity android:name=".SearchActivity" android:exported="false"/>
+        <activity android:name=".EditBookingActivity" android:exported="false"/>
 
     </application>
 
