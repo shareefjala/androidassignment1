@@ -6,6 +6,7 @@
         android:label="Trip App"
         android:theme="@style/Theme.MyApplication">
 
+        <!-- SPLASH SCREEN (LAUNCHER) -->
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -15,5 +16,13 @@
             </intent-filter>
         </activity>
 
+        <!-- LOGIN SCREEN -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        
+        <activity android:name=".HomeActivity" android:exported="false"/>
+
     </application>
+
 </manifest>

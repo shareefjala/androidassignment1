@@ -28,12 +28,15 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String user = userField.getText().toString();
                 String pass = passField.getText().toString();
-                // Simple credential check (for example purposes)
+
                 if (user.equals("admin") && pass.equals("admin")) {
                     Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT).show();
-                    // Proceed to main activity
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                    finish();
+
+                    // Redirect to HomeActivity instead of MainActivity
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(intent);
+
+                    finish(); // disable back button returning to login
                 } else {
                     Toast.makeText(getApplicationContext(), "Wrong credentials", Toast.LENGTH_SHORT).show();
                 }
